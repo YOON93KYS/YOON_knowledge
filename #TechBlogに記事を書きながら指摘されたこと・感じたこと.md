@@ -59,6 +59,7 @@ https://www.nakanihon.co.jp/gijyutsu/Shimada/bunsyo/ChapB04.htm
 
 https://niwasaburoo.amebaownd.com/posts/5816165
 
+
 ### 箇条書ではなく、文章として書くこと
 
 行なった原因：
@@ -81,6 +82,7 @@ https://niwasaburoo.amebaownd.com/posts/5816165
 データ中心によるビジネス上の意思決定を導くため → データ・ドリブンなビジネス上の意思決定を導くため
 
 ### 説明しています、問題を克服するために (説明？何を？、問題？何が？）
+
 
 
 
