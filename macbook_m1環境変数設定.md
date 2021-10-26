@@ -1,27 +1,27 @@
-m1は~/.bash_profileと ~/.zshrc 両方とも設定する必要がある
+m1は「~/.zshrc」を設定する必要がある
 
 # 手順
-1.vi ~/.bash_profile　コマンド入力
+1. vi ~/.zshrc コマンド入力
+
 2. binのPATHを設定
 
 ```
-export PATH="$PATH:`pwd``binがあるところ`"
+export PATH="$PATH:`binがあるPATH`"
 ```
 
 ```
 ex)
-export PATH="$PATH:/Users/yoonhyeonho/Downloads/flutter/bin"
+export PATH="$PATH:~/Downloads/flutter/bin"
 ```
 
-3. vi ~/.zshrc コマンド入力
-
-4. binのPATHを設定
+3.設定ファイル更新
 
 ```
-export PATH="$PATH:`pwd``binがあるところ`"
+source ~/.zshrc
 ```
 
+4.（必要に応じて）環境変数確認
+
 ```
-ex)
-export PATH="$PATH:/Users/yoonhyeonho/Downloads/flutter/bin"
+echo $PATH
 ```
