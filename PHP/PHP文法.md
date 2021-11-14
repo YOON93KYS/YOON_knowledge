@@ -25,5 +25,13 @@ SQLにすると
 select id,title from posts where id = 1 limit 1
 ```
 
+
+## 集計
+
+```
+$users = DB::table('users')->count();
+$price = DB::table('orders')->max('price');
+```
+
 # Laravelのバージョン確認方法
 composer.jsonから確認可能
