@@ -35,3 +35,17 @@ $price = DB::table('orders')->max('price');
 
 # Laravelのバージョン確認方法
 composer.jsonから確認可能
+
+## Performance改善のために先にレコード数を絞ってから計算したい場合
+
+        $Lat = $params['Lat'] ?? '';
+        $Long = $params['Long'] ?? '';
+        $currentLong = 'bb';
+        $distance = $params['KKK'];
+        $m_optimize = DB::table('m')
+                            ->whereBetween('A', [$Lat - 0.027, $Lat + 0.027])
+                            ->whereBetween('b', [$Long - 0.03375, $Long + 0.03375]);
+        $query =  DB::table($m_shop_optimize, 'm')
+              ->select(
+                  'm.post_id as id'
+                )
