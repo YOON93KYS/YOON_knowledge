@@ -49,3 +49,27 @@ composer.jsonから確認可能
               ->select(
                   'm.post_id as id'
                 )
+## サブクエリ
+
+        $Lat = $params['Lat'] ?? '';
+        $Long = $params['Long'] ?? '';
+        $currentLong = 'bb';
+        $distance = $params['KKK'];
+        $m_optimize = DB::table('m')
+                            ->whereBetween('A', [$Lat - 0.027, $Lat + 0.027])
+                            ->whereBetween('b', [$Long - 0.03375, $Long + 0.03375]);
+        $query =  DB::table($m_shop_optimize, 'm')
+              ->select(
+                  'm.post_id as id'
+                )
+        $latestposts = DB::table('m_shops_deliveries')
+                        ->where('shop_code', '41466');
+        $query =  DB::table($m_shop_optimize, 'm')
+              ->select(
+                  'm.post_id as id',
+                　'latest_posts.shop_code as shop_code',
+                )
+              ->joinSub($latestposts, 'latest_posts', function ($join) {
+                $join->on('latest_posts.post_id', '=', 'm.post_id');
+              })
+              ->get();
